@@ -1,10 +1,7 @@
-// js/app.js
-// Lógica principal de la app (JavaScript vanilla, sin frameworks)
 
-// Favoritos guardados en un simple array en memoria (mientras la página esté abierta)
 let favoritos = [];
 
-// Se ejecuta cuando el HTML ya está listo (equivalente a "onload")
+
 document.addEventListener("DOMContentLoaded", inicializar);
 
 function inicializar() {
@@ -16,9 +13,7 @@ function inicializar() {
   cambiarPagina("home");
 }
 
-/* =========================================================
-   NAVEGACIÓN ENTRE "PÁGINAS" (SPA simulada con switch)
-   ========================================================= */
+
 function configurarNavbar() {
   const logo = document.getElementById("logo");
   logo.addEventListener("click", () => cambiarPagina("home"));
@@ -32,11 +27,11 @@ function configurarNavbar() {
 }
 
 function cambiarPagina(pagina) {
-  // Ocultar todas las secciones y quitar "active" del navbar
+ 
   document.querySelectorAll(".pagina").forEach((sec) => sec.classList.remove("active"));
   document.querySelectorAll(".navbar-links li").forEach((li) => li.classList.remove("active"));
 
-  // switch visto en clase para decidir qué mostrar
+
   switch (pagina) {
     case "home":
       document.getElementById("pagina-home").classList.add("active");
@@ -61,9 +56,7 @@ function cambiarPagina(pagina) {
   if (linkActivo) linkActivo.classList.add("active");
 }
 
-/* =========================================================
-   BUSCADOR DE LA PÁGINA DE INICIO
-   ========================================================= */
+
 function configurarBusqueda() {
   const form = document.getElementById("form-busqueda");
 
@@ -79,9 +72,7 @@ function configurarBusqueda() {
   });
 }
 
-/* =========================================================
-   LISTADO DE RECETAS (creado dinámicamente con createElement)
-   ========================================================= */
+
 function renderizarRecetas() {
   const grid = document.getElementById("grid-recetas");
   grid.innerHTML = "";
@@ -120,9 +111,7 @@ function renderizarRecetas() {
   });
 }
 
-/* =========================================================
-   DETALLE DE UNA RECETA
-   ========================================================= */
+
 function mostrarDetalle(id) {
   const receta = recetas.find((r) => r.id === id);
   if (!receta) return;
@@ -206,16 +195,14 @@ function copiarIngredientes(receta) {
     .catch(() => alert("No se pudo copiar. Intenta de nuevo."));
 }
 
-/* =========================================================
-   FAVORITOS (array con push/splice)
-   ========================================================= */
+
 function alternarFavorito(id) {
   const index = favoritos.indexOf(id);
 
   if (index === -1) {
-    favoritos.push(id); // agregar a favoritos
+    favoritos.push(id); 
   } else {
-    favoritos.splice(index, 1); // quitar de favoritos
+    favoritos.splice(index, 1); 
   }
 
   renderizarFavoritos();
@@ -253,9 +240,7 @@ function renderizarFavoritos() {
   contenedor.appendChild(grid);
 }
 
-/* =========================================================
-   LOGIN (validación con clases .valido / .invalido)
-   ========================================================= */
+
 function configurarLogin() {
   const form = document.getElementById("form-login");
   const inputEmail = document.getElementById("email");
