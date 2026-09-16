@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fdfbf7;
+  color: #2c3e50;
+  min-height: 100vh;
+}
+
+.main-container {
+  min-height: calc(100vh - 120px);
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Manejo de páginas (simulación de "rutas") ===== */
+.pagina {
+  display: none;
+}
+
+.pagina.active {
+  display: block;
+}
+
+/* ===== Botón principal ===== */
+.btn-primary {
+  background-color: #e65100;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #bf360c;
+  transform: translateY(-2px);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e65100;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar-links li {
+  cursor: pointer;
+  font-weight: 500;
+  color: #2c3e50;
+  transition: color 0.2s;
+}
+
+.navbar-links li:hover,
+.navbar-links li.active {
+  color: #e65100;
+  border-bottom: 2px solid #e65100;
+}
+
+/* ===== Home ===== */
+.home-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #e65100;
+}
+
+/* ===== Recetas (grid) ===== */
+.recetas-container h2,
+#pagina-recetas h2 {
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.grid-recetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-receta {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s;
+}
+
+.tarjeta-receta:hover {
+  transform: translateY(-5px);
+}
+
+.badge {
+  background-color: #2e7d32;
+  color: white;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+/* ===== Detalle de receta ===== */
+.detalle-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.btn-volver {
+  background: none;
+  border: none;
+  color: #e65100;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.acciones-bar {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.acciones-bar button {
+  background: #fdfbf7;
+  border: 1px solid #e0e0e0;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.seccion {
+  margin-top: 20px;
+}
+
+.seccion h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.seccion ul, .seccion ol {
+  padding-left: 20px;
+}
+
+.seccion li {
+  margin-bottom: 6px;
+}
+
+/* ===== Login ===== */
+.login-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.input-group input {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+/* Validación de formularios (visto en clase) */
+.valido {
+  border: solid !important;
+  border-color: chartreuse !important;
+}
+
+.invalido {
+  border: dashed !important;
+  border-color: red !important;
+}
+
+/* ===== Favoritos ===== */
+#lista-favoritos p {
+  margin-top: 10px;
+  color: #7f8c8d;
+}
