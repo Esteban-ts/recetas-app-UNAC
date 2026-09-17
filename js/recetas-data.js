@@ -1,5 +1,4 @@
-// js/recetas-data.js
-// Array de recetas (equivalente al recetas.json del proyecto en React)
+
 
 const recetas = [
   {
